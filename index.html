@@ -324,26 +324,36 @@ header{margin-left:var(--sw);height:52px;background:var(--surface);border-bottom
   :root{--bg:white;--surface:white;--surface2:#f5f5f5;--text:#111;--muted:#666;--border:#ccc;--accent:#b8860b;--accent2:#2d8a60;--danger:#c0392b;}
 }
 /* HOLD PESANAN */
-.hold-queue-bar{padding:6px 14px;background:rgba(240,192,64,.07);border-top:1px solid rgba(240,192,64,.2);display:flex;align-items:center;gap:8px;flex-shrink:0;}
 .hold-badge{background:rgba(240,192,64,.15);border:1px solid rgba(240,192,64,.3);color:var(--accent);font-family:var(--mono);font-size:.68rem;padding:2px 9px;border-radius:999px;font-weight:600;}
 #btnHold{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(240,192,64,.35);background:rgba(240,192,64,.07);color:var(--accent);font-size:.76rem;cursor:pointer;transition:all .15s;}
 #btnHold:hover:not(:disabled){background:rgba(240,192,64,.16);border-color:var(--accent);}
 #btnHold:disabled{opacity:.28;cursor:not-allowed;}
-.btn-pulihkan{flex:1;padding:6px 10px;border-radius:7px;border:1px solid rgba(62,207,142,.3);background:rgba(62,207,142,.07);color:var(--accent2);font-size:.72rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:5px;justify-content:center;}
-.btn-pulihkan:hover{background:rgba(62,207,142,.15);border-color:var(--accent2);}
+.hold-list-panel{flex-shrink:0;border-top:1px solid rgba(240,192,64,.2);background:rgba(240,192,64,.04);max-height:148px;overflow-y:auto;}
+.hold-list-panel::-webkit-scrollbar{width:3px;}
+.hold-list-panel::-webkit-scrollbar-thumb{background:var(--border);}
+.hold-list-header{display:flex;align-items:center;justify-content:space-between;padding:5px 14px;border-bottom:1px solid rgba(240,192,64,.12);}
+.hold-list-title{font-size:.66rem;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;}
+.hold-list-item{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;border-bottom:1px solid rgba(255,255,255,.04);gap:8px;}
+.hold-list-item:last-child{border-bottom:none;}
+.hold-item-info{flex:1;min-width:0;}
+.hold-item-nama{font-size:.78rem;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hold-item-meta{font-family:var(--mono);font-size:.64rem;color:var(--muted);margin-top:1px;}
+.btn-restore-item{padding:4px 10px;border-radius:6px;border:1px solid rgba(62,207,142,.3);background:rgba(62,207,142,.07);color:var(--accent2);font-size:.68rem;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0;}
+.btn-restore-item:hover{background:rgba(62,207,142,.18);border-color:var(--accent2);}
 /* ANALISIS PERFORMA */
 #page-analisis.aktif{flex-direction:column;}
-.analisis-content{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:16px;}
-.analisis-jam-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;}
-.analisis-jam-label{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
-#analisisJam{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--accent);letter-spacing:-.5px;}
-#analisisTanggal{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-top:3px;}
-.analisis-canvas-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 22px;}
-.analisis-canvas-title{font-family:var(--display);font-size:.9rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-.analisis-canvas-wrap{border:2px dashed var(--border);border-radius:10px;overflow:hidden;background:var(--surface2);}
-.analisis-canvas-hint{font-size:.7rem;color:var(--muted);text-align:center;margin-top:8px;font-family:var(--mono);line-height:1.6;}
-.analisis-canvas-hint code{background:var(--surface);padding:1px 6px;border-radius:4px;border:1px solid var(--border);}
-.badge-soon-sm{font-family:var(--mono);font-size:.65rem;color:var(--accent);background:rgba(240,192,64,.1);border:1px solid rgba(240,192,64,.25);padding:2px 9px;border-radius:999px;margin-left:auto;}
+.analisis-content{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:12px;}
+.analisis-jam-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;}
+.analisis-jam-label{font-family:var(--mono);font-size:.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;}
+#analisisJam{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--accent);letter-spacing:-.5px;}
+#analisisTanggal{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:2px;}
+.analisis-canvas-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.analisis-canvas-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;}
+.analisis-canvas-title{font-family:var(--display);font-size:.82rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.analisis-canvas-wrap{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface2);}
+.analisis-canvas-hint{font-size:.63rem;color:var(--muted);margin-top:5px;font-family:var(--mono);line-height:1.5;}
+.analisis-canvas-hint code{background:var(--surface);padding:1px 5px;border-radius:3px;border:1px solid var(--border);}
+.badge-soon-sm{font-family:var(--mono);font-size:.62rem;color:var(--accent);background:rgba(240,192,64,.1);border:1px solid rgba(240,192,64,.25);padding:2px 8px;border-radius:999px;margin-left:auto;}
 /* TOAST */
 #toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 18px;border-radius:999px;font-size:.8rem;font-family:var(--mono);transition:transform .22s,opacity .22s;opacity:0;pointer-events:none;z-index:300;white-space:nowrap;}
 #toast.muncul{transform:translateX(-50%) translateY(0);opacity:1;}
@@ -411,14 +421,13 @@ header{margin-left:var(--sw);height:52px;background:var(--surface);border-bottom
         <h2>Keranjang Belanja</h2>
         <span class="badge-jumlah" id="badgeJumlah">0</span>
       </div>
-      <!-- ANTRIAN HOLD (FIFO) -->
-      <div class="hold-queue-bar" id="holdQueueBar" style="display:none;">
-        <span style="font-size:.7rem;color:var(--muted);font-family:var(--mono);">Pesanan ditahan:</span>
-        <span class="hold-badge" id="holdBadge">0</span>
-        <button class="btn-pulihkan" onclick="pulihkanPesanan()">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-          Pulihkan Pesanan
-        </button>
+      <!-- DAFTAR HOLD -->
+      <div class="hold-list-panel" id="holdListPanel" style="display:none;">
+        <div class="hold-list-header">
+          <span class="hold-list-title">Pesanan Ditahan</span>
+          <span class="hold-badge" id="holdBadge">0</span>
+        </div>
+        <div id="holdListItems"></div>
       </div>
       <div class="pelanggan-wrap">
         <div class="pelanggan-label-row">
@@ -627,35 +636,32 @@ header{margin-left:var(--sw);height:52px;background:var(--surface);border-bottom
       <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);opacity:.35"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
     </div>
 
-    <!-- CANVAS 1: Grafik Penjualan -->
-    <div class="analisis-canvas-card">
-      <div class="analisis-canvas-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><polyline points="7 16 11 10 15 14 19 8"/></svg>
-        Grafik Penjualan Harian
-        <span class="badge-soon-sm">Chart.js Ready</span>
+    <!-- CANVAS GRID -->
+    <div class="analisis-canvas-grid">
+      <!-- CANVAS 1: Grafik Penjualan -->
+      <div class="analisis-canvas-card">
+        <div class="analisis-canvas-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><polyline points="7 16 11 10 15 14 19 8"/></svg>
+          Penjualan Harian
+          <span class="badge-soon-sm">Chart.js</span>
+        </div>
+        <div class="analisis-canvas-wrap">
+          <canvas id="canvasGrafikPenjualan" height="160"></canvas>
+        </div>
+        <div class="analisis-canvas-hint"><code>canvasGrafikPenjualan</code> — line chart</div>
       </div>
-      <div class="analisis-canvas-wrap">
-        <canvas id="canvasGrafikPenjualan" height="200"></canvas>
-      </div>
-      <div class="analisis-canvas-hint">
-        Placeholder canvas — integrasikan Chart.js lalu panggil:<br/>
-        <code>new Chart(document.getElementById('canvasGrafikPenjualan'), { type:'line', data:... })</code>
-      </div>
-    </div>
 
-    <!-- CANVAS 2: Distribusi Diskon -->
-    <div class="analisis-canvas-card">
-      <div class="analisis-canvas-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
-        Distribusi Diskon &amp; Margin
-        <span class="badge-soon-sm">Chart.js Ready</span>
-      </div>
-      <div class="analisis-canvas-wrap">
-        <canvas id="canvasGrafikDiskon" height="200"></canvas>
-      </div>
-      <div class="analisis-canvas-hint">
-        Placeholder canvas — integrasikan Chart.js lalu panggil:<br/>
-        <code>new Chart(document.getElementById('canvasGrafikDiskon'), { type:'doughnut', data:... })</code>
+      <!-- CANVAS 2: Distribusi Diskon -->
+      <div class="analisis-canvas-card">
+        <div class="analisis-canvas-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+          Diskon &amp; Margin
+          <span class="badge-soon-sm">Chart.js</span>
+        </div>
+        <div class="analisis-canvas-wrap">
+          <canvas id="canvasGrafikDiskon" height="160"></canvas>
+        </div>
+        <div class="analisis-canvas-hint"><code>canvasGrafikDiskon</code> — doughnut chart</div>
       </div>
     </div>
   </div>
@@ -1153,31 +1159,46 @@ function holdPesanan() {
   tampilkanToast(`Pesanan ditahan. Antrean: ${holdQueue.length}`);
 }
 
-function pulihkanPesanan() {
-  if (!holdQueue.length) return;
+function pulihkanPesanan(idx) {
+  if (idx === undefined) idx = 0;
+  if (!holdQueue.length || idx >= holdQueue.length) return;
   if (keranjang.length > 0) {
     if (!confirm("Keranjang aktif tidak kosong. Timpa dengan pesanan yang ditahan?")) return;
   }
-  const pesanan = holdQueue.shift(); /* FIFO: ambil pesanan paling awal */
+  const pesanan = holdQueue.splice(idx, 1)[0]; /* Ambil berdasarkan index */
   keranjang = pesanan.items;
   document.getElementById("namaPembeli").value = pesanan.namaPembeli || "";
   document.getElementById("inputBayar").value  = "";
   document.getElementById("inputDiskon").value = "";
   renderKeranjang();
   renderProduk();
+  updateHoldUI();
   tampilkanToast(`Pesanan dipulihkan. Sisa hold: ${holdQueue.length}`);
 }
 
 function updateHoldUI() {
-  const bar     = document.getElementById("holdQueueBar");
+  const panel   = document.getElementById("holdListPanel");
   const badge   = document.getElementById("holdBadge");
   const btnHold = document.getElementById("btnHold");
   badge.textContent = holdQueue.length;
-  bar.style.display = holdQueue.length > 0 ? "flex" : "none";
-  btnHold.disabled  = keranjang.length === 0;
-  btnHold.textContent = holdQueue.length > 0
-    ? `Tahan (Hold) Pesanan — ${holdQueue.length} di antrean`
-    : "Tahan (Hold) Pesanan";
+  panel.style.display = holdQueue.length > 0 ? "block" : "none";
+  btnHold.disabled = keranjang.length === 0;
+  btnHold.textContent = "Tahan (Hold) Pesanan";
+  /* Render daftar nama pesanan yang di-hold */
+  const listEl = document.getElementById("holdListItems");
+  listEl.innerHTML = holdQueue.map((p, i) => {
+    const nama = p.namaPembeli || `Pesanan #${i+1}`;
+    const totalItem = p.items.reduce((a, x) => a + x.qty, 0);
+    const totalHarga = p.items.reduce((a, x) => a + x.hargaJual * x.qty, 0);
+    return `
+      <div class="hold-list-item">
+        <div class="hold-item-info">
+          <div class="hold-item-nama">${nama}</div>
+          <div class="hold-item-meta">${totalItem} item &bull; ${formatRp(totalHarga)}</div>
+        </div>
+        <button class="btn-restore-item" onclick="pulihkanPesanan(${i})">Pulihkan</button>
+      </div>`;
+  }).join("");
 }
 
 /* ================================================================
